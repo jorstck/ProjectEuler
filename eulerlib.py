@@ -35,6 +35,15 @@ def is_prime(x: int) -> bool:
         return True
 
 
+def list_primes_under_n(n: int) -> list:
+    '''
+    n: an integer
+    returns a list of primes under n
+    Ex: list_primes_under_n(10) -> [2,3,5,7]
+    '''
+    return [x for x in range(n) if is_prime(x)]
+
+
 def list_prime_factors(number: int) -> list:
     '''
     number: an integer
