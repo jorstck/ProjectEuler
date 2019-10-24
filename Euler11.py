@@ -1,4 +1,4 @@
-import eulerlib as el 
+import eulerlib as el
 
 numberGrid = '''
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
@@ -22,4 +22,37 @@ numberGrid = '''
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 '''
+array = numberGrid.splitlines()
+array.pop(0)
 
+for x in range(len(array)):  # creates 2d array of type ints
+    array[x] = [int(s) for s in array[x].split()]
+
+max_product = 1
+
+for i in range(17):
+    for j in range(17):
+        # Check down-right diag
+        prod = array[i][j] * array[i+1][j+1] * \
+            array[i+2][j+2] * array[i+3][j+3]
+        if prod > max_product:
+            max_product = prod
+        # Check right
+        prod = array[i][j] * array[i][j+1] * \
+            array[i][j+2] * array[i][j+3]
+        if prod > max_product:
+            max_product = prod
+        # Check down
+        prod = array[i][j] * array[i+1][j] * \
+            array[i+2][j] * array[i+3][j]
+        if prod > max_product:
+            max_product = prod
+
+for i in range(19, 3, -1):
+    for j in range(17):
+        # Check up-right diag
+        prod = array[i][j] * array[i-1][j+1] * \
+            array[i-2][j+2] * array[i-3][j+3]
+        if prod > max_product:
+            max_product = prod
+print(max_product)

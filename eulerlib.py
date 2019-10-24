@@ -99,3 +99,12 @@ def more_digits_denomator(number: float) -> bool:
     numLength = num_digits(frac.numerator)
     denLength = num_digits(frac.denominator)
     return numLength < denLength
+
+
+def lattice_paths(m: int, n: int) -> int:
+    '''
+    m, n: the size of the lattice grid
+    returns the number of routes from top left of grid to bottom of grid, when you can only move down and right. 
+    This can be used for the number of combinations of 2n items taken n at a time
+    '''
+    return math.factorial(m+n)//((math.factorial(m))*(math.factorial(n)))
