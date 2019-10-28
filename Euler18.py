@@ -16,9 +16,17 @@ triangle = '''75
 '''
 
 triArray = triangle.splitlines()
+# print(triArray)
 for x in range(len(triArray)):
-    triArray[x].split()
+    triArray[x] = [int(n) for n in triArray[x].split()]
 
+sum = triArray[0][0]
+last = 0
+for x in range(1, len(triArray)):
+    sum += max(triArray[x][last:last+2])
+    if triArray[x][last] > triArray[x][last+1]:
+        last = last
+    else:
+        last += 1
 
-
-print(triArray[1][1])
+print(sum)
