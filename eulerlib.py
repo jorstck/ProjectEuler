@@ -5,6 +5,7 @@ Created by Jordan Stack
 '''
 
 from fractions import Fraction
+import math
 
 
 def is_square(x: int) -> bool:
