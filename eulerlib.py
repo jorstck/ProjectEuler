@@ -108,3 +108,4 @@ def lattice_paths(m: int, n: int) -> int:
     This can be used for the number of combinations of 2n items taken n at a time
     '''
     return math.factorial(m+n)//((math.factorial(m))*(math.factorial(n)))
+

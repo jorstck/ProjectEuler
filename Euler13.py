@@ -109,3 +109,5 @@ while el.num_digits(sumNums) > 10:
     sumNums = sumNums // 10
 
 print(sumNums)
+
+el.is_prime()
