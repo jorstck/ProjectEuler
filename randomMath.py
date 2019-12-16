@@ -1,4 +1,4 @@
-# claim: for small theta, sin(theta) = theta (approx)
-import math, numpy
-for x in numpy.arange(0,1, 0.01):
-    print(x, math.sin(x))
+from mpmath import mp 
+mp.dps = 5000
+print(mp.quad(lambda x: mp.exp(-x**2), [-mp.inf, mp.inf]) ** 2)
+
